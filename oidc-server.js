@@ -71,7 +71,9 @@ const oidc = new Provider('http://localhost:3000', configuration);
 
 // Example of using bcrypt to not store plain text client secret
 oidc.Client.prototype.compareClientSecret = async function (input) {
-  // example in db seed is bcrypt with 10 rounds
+  // example in db seed file is bcrypt with 10 rounds
+  // input - plaintext input from request
+  // this.clientSecret - hashed secret from db
   return bcrypt.compareSync(input, this.clientSecret);
 };
 
