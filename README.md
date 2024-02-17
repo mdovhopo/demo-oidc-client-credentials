@@ -1,6 +1,8 @@
 # OIDC Server demo
 
-Minimal demo with node-oidc-provider lib. Demo supports only client credentials flow.
+Minimal demo of oauth2 server. Demo supports only client credentials flow.
+
+Demo uses https://github.com/panva/node-oidc-provider - Cerified OpenID Connect server - https://openid.net/certification .
 
 ## How to run
 
