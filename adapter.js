@@ -45,6 +45,12 @@ export class Adapter {
     storage.get(this.key(id)).consumed = epochTime();
   }
 
+  /**
+   * 
+   * @param {string} id 
+   * @returns {Promise<import('oidc-provider').AdapterPayload | undefined>}
+   */
+
   async find(id) {
     console.log('Adapter.find:', id, storage.get(this.key(id)));
     return storage.get(this.key(id));

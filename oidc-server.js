@@ -1,5 +1,6 @@
 import Provider from './node-oidc-provider/lib/index.js';
 import { Adapter } from './adapter.js';
+import bcrypt from 'bcryptjs';
 
 /**
  * @type {import("oidc-provider").Configuration}
@@ -67,6 +68,12 @@ const configuration = {
 };
 
 const oidc = new Provider('http://localhost:3000', configuration);
+
+// Example of using bcrypt to not store plain text client secret
+oidc.Client.prototype.compareClientSecret = async function (input) {
+  // example in db seed is bcrypt with 10 rounds
+  return bcrypt.compareSync(input, this.clientSecret);
+};
 
 // when running behind tls offload, we need to set this to true
 oidc.proxy = true;

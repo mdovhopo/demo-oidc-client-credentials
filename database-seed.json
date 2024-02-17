@@ -1,7 +1,7 @@
 {
   "Client:foo": {
     "client_id": "foo",
-    "client_secret": "bar",
+    "client_secret": "$2a$10$jdU37S03RIaEExzqMc/nUOuRLpMo4T99EZhLrwEsx.J9eJ2VVzKtm",
     "redirect_uris": [],
     "response_types": [],
     "grant_types": [
