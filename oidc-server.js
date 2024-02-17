@@ -8,14 +8,16 @@ const configuration = {
   formats: {
     customizers: {
       jwt: (ctx, token, parts) => {
-        console.log(parts);
+        // console.log(parts);
         parts.payload.nbf = parts.payload.iat;
       },
     },
   },
   extraTokenClaims: (ctx, token) => {
     return {
-      foo: 'bar',
+      claimsdeez: {
+        foo: 'bar',
+      },
     };
   },
   features: {
@@ -34,6 +36,11 @@ const configuration = {
           scope: '',
           accessTokenFormat: 'jwt',
           accessTokenTTL: 3600,
+          jwt: {
+            sign: {
+              alg: 'RS256',
+            },
+          },
         };
       },
     },
@@ -53,7 +60,7 @@ const configuration = {
       redirect_uris: [],
       response_types: [],
       grant_types: ['client_credentials'],
-      audience: ['https://hiiretail.com'],
+      // audience: 'https://hiiretail.com',
       token_endpoint_auth_method: 'client_secret_basic',
     },
   ],
