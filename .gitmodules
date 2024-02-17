@@ -1,0 +1,3 @@
+[submodule "node-oidc-provider"]
+	path = node-oidc-provider
+	url = git@github.com:panva/node-oidc-provider.git
