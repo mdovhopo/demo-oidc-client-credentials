@@ -1,0 +1,12 @@
+{
+  "Client:foo": {
+    "client_id": "foo",
+    "client_secret": "bar",
+    "redirect_uris": [],
+    "response_types": [],
+    "grant_types": [
+      "client_credentials"
+    ],
+    "token_endpoint_auth_method": "client_secret_basic"
+  }
+}
