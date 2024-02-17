@@ -24,6 +24,7 @@ const result = await fetch(base + endpoint, {
 if (result.ok) {
   const json = await result.json();
   const access_token = json.access_token;
+  console.log('fetched token:', access_token);
   console.log('fetched token, decoded:');
   const [header, payload] = access_token.split('.');
   console.log(JSON.parse(Buffer.from(header, 'base64').toString()));
